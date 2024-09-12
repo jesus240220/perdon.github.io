@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdóname Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a18cd1 100%);
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4A148C;
+            font-family: 'Cursive', sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: white;
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos Responsivos */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>¿Me perdonas por como me comporte?</h1>
+    <img src="..\perdon\Recursos\milk and mocha.gif" alt="GIF de perdón">
+    
+    <div>
+        <button class="btn-yes">SII!!</button>
+        <button class="btn-no">No</button>
+    </div>
+</div>
+
+<script>
+    const btnYes = document.querySelector('.btn-yes');
+    const btnNo = document.querySelector('.btn-no');
+    const phrases = [
+        "No, no te perdono",
+        "Apúrate amorcito",
+        "Perdóname...",
+        "Por fa, no tardes más",
+        "No seas así amor"
+    ];
+    let currentPhraseIndex = 0;
+
+    btnNo.addEventListener('click', function () {
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        btnNo.textContent = phrases[currentPhraseIndex];
+        btnYes.style.fontSize = parseInt(getComputedStyle(btnYes).fontSize) + 2 + "px";
+    });
+
+    btnYes.addEventListener('click', function () {
+        window.location.href = 'gacias.html';
+    });
+</script>
+
+</body>
+</html>
